@@ -23,11 +23,11 @@ int min_cost(int (*cost)[M], int n, int m)
     for(i=1; i<=n; i++)
         temp[i][0] = temp[i-1][0] + cost[i][0];
 
-    for(j=1; j<=n; j++)
+    for(j=1; j<=m; j++)
         temp[0][j] = temp[0][j-1] + cost[0][j];
 
-    for(i=1; i<=m; i++)
-        for(j=1; j<=n; j++)
+    for(i=1; i<=n; i++)
+        for(j=1; j<=m; j++)
             temp[i][j] = min(temp[i-1][j-1], temp[i-1][j], temp[i][j-1]) \
             + cost[i][j];
 
